@@ -1,0 +1,22 @@
+.second-screen-block {
+  padding-top: 1.875rem;
+  padding-bottom: 5.375rem;
+  .header {
+    display: flex;
+    .logo {
+      fill: $red;
+      padding-top: 3px;
+    }
+    .text {
+      padding-left: 12px;
+      font-size: 1rem;
+    }
+  }
+  .content {
+    text-align: center;
+    padding-top: 3.875rem;
+    .title {
+      padding-bottom: 5rem;
+    }
+  }
+}

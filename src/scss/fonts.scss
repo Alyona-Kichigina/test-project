@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "PTSansCaption";
+  src: url("../../public/fonts/PTSansCaptionBold/PTSansCaptionBold.woff") format("woff2"),
+  url("../../public/fonts/PTSansCaptionBold/PTSansCaptionBold.ttf") format("ttf"),
+  url("../../public/fonts/PTSansCaptionBold/PTSansCaptionBold.eot") format("eot");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "PTSansCaptionRegular";
+  src: url("../../public/fonts/PTSansCaptionRegular/PTSansCaptionRegular.woff") format("woff2"),
+  url("../../public/fonts/PTSansCaptionRegular/PTSansCaptionRegular.ttf") format("ttf"),
+  url("../../public/fonts/PTSansCaptionRegular/PTSansCaptionRegular.eot") format("eot");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url("../../public/fonts/MyriadPro/MyriadPro-Regular.otf") format("otf");
+  font-style: normal;
+  font-weight: 400;
+}

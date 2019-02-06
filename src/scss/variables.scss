@@ -1,0 +1,45 @@
+$white: #ffffff;
+$grey: #5f6062;
+$green: #77b53c;
+$pink: #df4a5e;
+$red: #b22725;
+$color-font: #333333;
+$button-hover: #5d902b;
+$button-hover-form: #4b4c4d;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PTSansCaptionRegular', sans-serif;
+  //font-family: 'PT Sans', sans-serif;
+  color: $color-font;
+}
+
+.container {
+  max-width: 1092px;
+  min-width: 819px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.1875rem;
+}
+
+p {
+  margin: 0;
+}
+
+//@import url('https://fonts.googleapis.com/css?family=PT+Sans');

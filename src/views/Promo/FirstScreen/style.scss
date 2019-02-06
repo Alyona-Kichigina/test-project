@@ -1,0 +1,71 @@
+.first-screen-block {
+  color: $white;
+  background-image: url('../../../../public/img/background1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  .header {
+    padding-top: 2.3125rem;
+    display: flex;
+    .logo {
+      fill: $white;
+    }
+    .text {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin: 0 auto;
+    }
+  }
+  .content {
+    text-align: center;
+    padding-top: 7.625rem;
+    h1 {
+      padding-bottom: 4.0625rem;
+    }
+    .form-block {
+      padding-bottom: 2.1875rem;
+    }
+    .btn-def {
+
+    }
+  }
+  .button-down {
+    display: flex;
+    justify-content: center;
+    padding-top: 8.625rem;
+    padding-bottom: 3.75rem;
+    cursor: pointer;
+  }
+  .buttons {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 28px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .circle {
+      border-radius: 50%;
+      height: 13px;
+      width: 13px;
+      border: 2px solid $white;
+      background: $white;
+      margin-bottom: 16px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.active{
+        background: $color-font;
+      }
+      &:hover {
+        background: $color-font;
+      }
+    }
+  }
+}
+
