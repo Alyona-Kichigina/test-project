@@ -14,16 +14,10 @@
       padding-top: 1.25rem;
     }
     .logo {
-      position: absolute;
       fill: $white;
-      display: flex;
+      position: absolute;
       @media (max-width: 420px) {
         position: static;
-      }
-      span {
-        line-height: .8;
-        padding-left: 12px;
-        font-size: 1rem;
       }
     }
     .text {
