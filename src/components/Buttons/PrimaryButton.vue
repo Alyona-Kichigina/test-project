@@ -23,6 +23,9 @@ export default {
 	cursor: pointer;
 	background-color: $green;
 	border-color: transparent;
+	@media (max-width: 559px) {
+		font-size: 1rem;
+	}
 	&:hover, &:focus {
 		background-color: $button-hover;
 		outline: 0;

@@ -8,19 +8,40 @@
   .header {
     padding-top: 2.3125rem;
     display: flex;
+    position: relative;
+    @media (max-width: 420px) {
+      flex-direction: column;
+      padding-top: 1.25rem;
+    }
     .logo {
+      position: absolute;
       fill: $white;
+      display: flex;
+      @media (max-width: 420px) {
+        position: static;
+      }
+      span {
+        line-height: .8;
+        padding-left: 12px;
+        font-size: 1rem;
+      }
     }
     .text {
       text-transform: uppercase;
       font-weight: 700;
       font-size: 0.75rem;
       margin: 0 auto;
+      @media (max-width: 420px) {
+        padding-top: 25px;
+      }
     }
   }
   .content {
     text-align: center;
     padding-top: 7.625rem;
+    @media (max-width: 420px) {
+      padding-top: 4.375rem;
+    }
     h1 {
       padding-bottom: 4.0625rem;
     }

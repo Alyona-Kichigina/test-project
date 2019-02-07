@@ -7,6 +7,7 @@
       <div class="form-control">
         <Input
           id="login"
+          :class="$style.asd"
           v-model="formPayload.login"
           :validationErrors="validationErrors.login"
           :submitFailed="submitFailed"
@@ -23,62 +24,70 @@
 </template>
 
 <script>
-import { getValidation } from '@/utils/valiadtor'
-import Input from '@/components/Fields/InputComponent'
-import { LOGIN } from '@/store/modules/auth'
+import { getValidation } from '@/utils/valiadtor';
+import Input from '@/components/Fields/InputComponent';
+import { LOGIN } from '@/store/modules/auth';
+
 export default {
   name: 'index',
-  data () {
+  data() {
     return {
       formPayload: {
         login: undefined,
-        password: undefined
+        password: undefined,
       },
       // объект ошибки валлидации
       validationErrors: {},
       // не выводим ошибку
-      submitFailed: false
-    }
+      submitFailed: false,
+    };
   },
   components: {
-    Input
+    Input,
   },
   methods: {
     // при нажатии на кнопку
-    handleSubmit () {
+    handleSubmit() {
       // обязательные поля для заполнения
       const rules = {
         login: 'required',
-        password: 'required'
-      }
+        password: 'required',
+      };
       // вызываем проверку валидации
-      getValidation(this.formPayload, rules, { onFail: this.handleSubmitFail, onSuccess: this.submitForm })
+      getValidation(this.formPayload, rules, { onFail: this.handleSubmitFail, onSuccess: this.submitForm });
     },
     // функция при ошибке валидации
-    handleSubmitFail (e) {
+    handleSubmitFail(e) {
       // выводим ошибку
-      this.submitFailed = true
+      this.submitFailed = true;
       // выводим текст ошибки
-      this.validationErrors = e
+      this.validationErrors = e;
     },
     // функция если валидация прошла успешно
-    submitForm () {
+    submitForm() {
       // не выводим ошибку
-      this.submitFailed = false
+      this.submitFailed = false;
       // очищаем объект ошибки
-      this.validationErrors = {}
+      this.validationErrors = {};
       // вызываем функцию в vuex делая запрос на бд
-      this.$store.dispatch(LOGIN, this.formPayload)
-    }
+      this.$store.dispatch(LOGIN, this.formPayload);
+    },
   },
   // срабатывает при изменениях
   computed: {
-    authErrors () {
+    authErrors() {
       // выводим ощибку что неправильно заполнены поля ввода, вызвав объект authState.error
-      return this.$store.getters.authState.error
-    }
-  }
-}
+      return this.$store.getters.authState.error;
+    },
+  },
+};
 </script>
-
+<style lang="scss" module>
+  .asd {
+    width: 100%;
+    padding-left: 38px!important;
+    background: $white;
+    border: transparent;
+  }
+</style>
 <style scoped lang="scss" src="./style.scss"></style>

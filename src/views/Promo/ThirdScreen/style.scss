@@ -9,9 +9,9 @@
     display: flex;
     .logo {
       fill: $white;
-      padding-top: 3px;
     }
     .text {
+      line-height: .8;
       padding-left: 12px;
       font-size: 1rem;
     }
@@ -27,29 +27,55 @@
       font-size: 3.125rem;
       font-weight: 700;
       padding: 0 5.4375rem 2.5rem;
+      @media (max-width: 858px) {
+        font-size: 2.5rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+      }
+      @media (max-width: 559px) {
+        font-size: 1.625rem;
+      }
+      @media (max-width: 420px) {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.375rem;
+      }
     }
     .action {
       text-align: left;
       margin-top: 3.4375rem;
       background: $pink;
-      padding: 2.0625rem 2.1875rem;
+      padding: 1.25rem 2.1875rem;
       display: flex;
       align-items: center;
       border-radius: 5px;
       justify-content: space-between;
+      @media (max-width: 420px) {
+        padding: 1.25rem;
+      }
       .text {
         font-size: 1.375rem;
         line-height: 1.4;
+        @media (max-width: 559px) {
+          font-size: 1.125rem;
+        }
+        @media (max-width: 420px) {
+          font-size: 1rem;
+        }
         a {
           color: $white;
         }
       }
       .number-block {
+        padding: 0.8125rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
         padding-left: 30px;
         border-left: 2px solid rgba(255, 255, 255, 0.2);
+        @media (max-width: 858px) {
+          display: none;
+        }
         .number {
           font-weight: 700;
           font-size: 3.125rem;

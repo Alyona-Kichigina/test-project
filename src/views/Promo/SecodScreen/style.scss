@@ -18,5 +18,36 @@
     .title {
       padding-bottom: 5rem;
     }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-row-gap: 30px;
+      grid-column-gap: 30px;
+      padding-bottom: 3.125rem;
+      .item {
+        cursor: pointer;
+        .icon-block {
+          .icon {
+
+          }
+          .name {
+            padding-top: 1.375rem;
+            font-size: 1.25rem;
+          }
+        }
+        .text {
+          display: none;
+          font-size: 1rem;
+          background: $grey-background;
+          border-radius: 5px;
+          border: 1px solid #afafb0;
+        }
+        &.active {
+          .text {
+            display: block;
+          }
+        }
+      }
+    }
   }
 }
