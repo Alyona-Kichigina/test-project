@@ -20,11 +20,6 @@
 			<div class="button-down">
 				<img src="../../../../public/img/down.png" alt="">
 			</div>
-			<div class="buttons">
-				<div class="circle active"></div>
-				<div class="circle"></div>
-				<div class="circle"></div>
-			</div>
 		</div>
 	</div>
 </template>
