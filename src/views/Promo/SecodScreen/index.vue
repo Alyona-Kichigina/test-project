@@ -9,7 +9,7 @@
 					Зарегистрировав у нас домен, вы получите
 				</div>
 				<div class="services-list">
-					<div class="item active">
+					<div class="item active" @click="cli">
 						<div class="icon-block">
 							<div class="icon">
 								<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
@@ -23,19 +23,11 @@
 										<circle cx="32" cy="21" r="11"/>
 									</g>
 								</svg>
-							
+
 							</div>
 							<div class="name">
 								Сайт-визитка
 							</div>
-						</div>
-						<div class="text">
-							Для любого вашего домена, зарегистрированного на «Джино»,
-							вы можете в несколько кликов создать простую страницу-визитку.
-							Это удобно, если ваш основной сайт еще не готов, или если домен вам нужен только для почты.
-							Вы можете разместить здесь краткую информацию о себе или вашем бизнесе,
-							ссылки на аккаунты в соцсетях и любые другие сайты.
-							Создание и поддержка базового варианта сайта-визитки абсолютно бесплатны.
 						</div>
 					</div>
 					<div class="item">
@@ -56,7 +48,7 @@
 	S57.962,28,53,28z M58.707,15.293c0.391,0.391,0.391,1.023,0,1.414l-6,6C52.512,22.902,52.256,23,52,23s-0.512-0.098-0.707-0.293
 	l-4-4c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L52,20.586l5.293-5.293C57.684,14.902,58.316,14.902,58.707,15.293z"/>
 </svg>
-							
+
 							</div>
 							<div class="name">
 								Поддержка DNS
@@ -115,6 +107,14 @@
 							</div>
 						</div>
 						<div class="text"></div>
+					</div>
+					<div class="text-a">
+						Для любого вашего домена, зарегистрированного на «Джино»,
+						вы можете в несколько кликов создать простую страницу-визитку.
+						Это удобно, если ваш основной сайт еще не готов, или если домен вам нужен только для почты.
+						Вы можете разместить здесь краткую информацию о себе или вашем бизнесе,
+						ссылки на аккаунты в соцсетях и любые другие сайты.
+						Создание и поддержка базового варианта сайта-визитки абсолютно бесплатны.
 					</div>
 					<div class="item">
 						<div class="icon-block">
@@ -256,20 +256,53 @@
 					</div>
 				</div>
 				<PrimaryButton>Создать аккаунт</PrimaryButton>
+				<Tab :tabTitles="servicesArray"></Tab>
+				</div>
 			</div>
-		</div>
+		<img :src="a" alt="">
+	</div>
 	</div>
 </template>
 
 <script>
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Logo from '@/components/Logo/index';
+import Tab from '@/components/Tab';
 
 export default {
   name: 'index',
-	components: {
-    PrimaryButton, Logo
-	}
+  components: {
+    PrimaryButton, Logo, Tab,
+  },
+  data() {
+    return {
+      servicesArray: [
+	      {
+	        id: 1,
+		      icon: '/features/autorenewal.svg',
+		      name: 'Поддержка DNS',
+		      text: 'Для любого вашего домена, зарегистрированного на «Джино»',
+	      },
+        {
+          id: 2,
+          icon: '/features/autorenewal.svg',
+          name: 'Поддержка DNS',
+          text: 'Для любого вашего домена, зарегистрированного на «Джино»lllll',
+        },
+      ],
+    };
+  },
+  mounted() {
+    this.servicesArray.map((name, index) => name);
+  },
+  methods: {
+    cli(v) {
+      console.log(this.servicesArray.reduce((acc, text) => {
+        const c = acc + text;
+        return c;
+      }, 0));
+    },
+  },
 };
 </script>
 

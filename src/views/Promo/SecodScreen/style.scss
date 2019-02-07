@@ -15,7 +15,7 @@
     }
     .services-list {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-row-gap: 30px;
       grid-column-gap: 30px;
       padding-bottom: 3.125rem;
@@ -30,19 +30,35 @@
             font-size: 1.25rem;
           }
         }
-        .text {
-          display: none;
-          font-size: 1rem;
-          background: $grey-background;
-          border-radius: 5px;
-          border: 1px solid #afafb0;
-        }
-        &.active {
-          .text {
-            display: block;
-          }
+      }
+      .text-a {
+        grid-column: 1 / -1;
+        font-size: 1rem;
+        background: $grey-background;
+        border-radius: 10px;
+        border: 1px solid #afafb0;
+        text-align: left;
+        position: relative;
+        padding: 1.5625rem 2.8125rem;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 1px;
+          z-index: 15;
+          width: 18px;
+          height: 18px;
+          border-color: #ccc;
+          border-top-width: 1px;
+          border-right-width: 1px;
+          border-bottom-width: 1px;
+          border-left-width: 1px;
+          border-width: 1px 0 0 1px;
+          transform: rotate(45deg) translate(-9px, -9px);
+          transform-origin: 0 0;
+          box-sizing: border-box;
         }
       }
+
     }
   }
 }
