@@ -1,9 +1,10 @@
 <template>
   <div class="promo">
     <FirstScreen ref="FirstScreen"/>
-    <SecodScreen ref="SecodScreen"/>
+    <SecondScreen ref="SecondScreen"/>
     <ThirdScreen ref="ThirdScreen"/>
     <div class="buttons">
+      <!--выводим количество кнопок столько сколько блоков-->
       <div
         v-for="(item, index) of scrollState"
         :class="index === navDotActiveIdes && 'active'"
@@ -16,7 +17,7 @@
 
 <script>
 import FirstScreen from './FirstScreen';
-import SecodScreen from './SecodScreen';
+import SecondScreen from './SecondScreen';
 import ThirdScreen from './ThirdScreen';
 
 const SPEED = 5;
@@ -27,9 +28,11 @@ const UP = 'UP';
 
 export default {
   beforeMount() {
+    // добавляем обработчик события scroll и вызываем функцию
     document.addEventListener('scroll', this.handleScroll);
   },
   mounted() {
+    // объект делаем массивом и создем новый массив с высотой каждого элемента
     this.scrollState = Object.values(this.$refs).map(({ $el: { clientHeight } }) => clientHeight);
   },
   beforeDestroy() {
@@ -55,6 +58,7 @@ export default {
         if (this.navDotActiveIdes !== index) this.navDotActiveIdes = index;
       }
     },
+    // при нажати получаем индекс кнопки
     smoothScrolling(index) {
       const targetYPosition = this.scrollState.reduce((acc, itemHeight, i) => {
         // eslint-disable-next-line no-param-reassign
@@ -77,39 +81,9 @@ export default {
     },
   },
   components: {
-    FirstScreen, SecodScreen, ThirdScreen,
+    FirstScreen, SecondScreen, ThirdScreen,
   },
 };
 </script>
 
-<style lang="scss" scoped>
-  .buttons {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 28px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .circle {
-      border-radius: 50%;
-      height: 13px;
-      width: 13px;
-      border: 2px solid $white;
-      background: $white;
-      margin-bottom: 16px;
-      transition: all 0.3s ease-in-out;
-      cursor: pointer;
-      &:last-child {
-        margin-bottom: 0;
-      }
-      &.active{
-        background: $color-font;
-      }
-      &:hover {
-        background: $color-font;
-      }
-    }
-  }
-</style>
+<style lang="scss" scoped></style>

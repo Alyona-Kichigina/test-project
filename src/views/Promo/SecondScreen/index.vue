@@ -89,12 +89,25 @@ export default {
         },
       ],
       selectedAdvantageIndex: 2,
+      itemA: []
     };
+  },
+  beforeMount() {
+    window.addEventListener('resize', this.getWigthChildren);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.getWigthChildren);
+  },
+  mounted() {
+    // console.log(this.$refs.servicesList, this.$refs.servicesList.clientWidth,this.$refs.servicesList.children[0].clientWidth)
   },
   methods: {
     changePromoText(index) {
-      return () => { this.selectedAdvantageIndex = index; };
+      return () => { this.selectedAdvantageIndex = index;  console.log(index)};
     },
+    getWigthChildren () {
+      const a = Math.round(this.$refs.servicesList.clientWidth / this.$refs.servicesList.children[0].clientWidth);
+    }
   },
   computed: {
     getPromoText() {
@@ -103,7 +116,7 @@ export default {
   },
   render(h) {
     const renderAdvanatages = this.servicesArray.reduce((acc, { name, icon }, index) => {
-      if (index === 4) acc.push(<div class="text-a">{this.getPromoText}</div>);
+      if (index === 2) acc.push(<div class="text-a">{this.getPromoText}</div>);
       acc.push(
         <div class="item" onClick={this.changePromoText(index)}>
           <div class="icon-block">
@@ -128,7 +141,7 @@ export default {
             <div class="title">
               Зарегистрировав у нас домен, вы получите
             </div>
-            <div class="services-list">
+            <div class="services-list" ref="servicesList">
               {renderAdvanatages}
             </div>
             <PrimaryButton>Создать аккаунт</PrimaryButton>
