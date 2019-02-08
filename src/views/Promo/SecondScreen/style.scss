@@ -17,18 +17,17 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-row-gap: 30px;
-      grid-column-gap: 30px;
+      //grid-column-gap: 30px;
       padding-bottom: 3.125rem;
       .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         cursor: pointer;
-        .icon-block {
-          .icon {
-
-          }
-          .name {
-            padding-top: 1.375rem;
-            font-size: 1.25rem;
-          }
+        padding: 0 15px;
+        .name {
+          padding-top: 1.375rem;
+          font-size: 1.25rem;
         }
       }
       .text-a {
@@ -40,22 +39,20 @@
         text-align: left;
         position: relative;
         padding: 1.5625rem 2.8125rem;
-        &:after {
+        z-index: 16;
+        &:before {
           content: '';
           position: absolute;
-          top: 1px;
+          top: 0;
           z-index: 15;
           width: 18px;
           height: 18px;
-          border-color: #ccc;
-          border-top-width: 1px;
-          border-right-width: 1px;
-          border-bottom-width: 1px;
-          border-left-width: 1px;
+          border: 1px solid red;
           border-width: 1px 0 0 1px;
           transform: rotate(45deg) translate(-9px, -9px);
           transform-origin: 0 0;
           box-sizing: border-box;
+          left: var(--selected-item-arrow-left);
         }
       }
 
