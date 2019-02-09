@@ -17,7 +17,6 @@
         </div>
         <PrimaryButton>Создать аккаунт</PrimaryButton>
       </div>
-      
     </div>
   </div>
 </template>

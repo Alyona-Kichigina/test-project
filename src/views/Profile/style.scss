@@ -1,0 +1,54 @@
+.profile-block {
+  padding: 50px 0;
+  .title {
+    text-align: left;
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+  p {
+    color: $grey;
+    padding-bottom: 30px;
+  }
+  .file-upload-block {
+    cursor: pointer;
+    display: flex;
+    padding-bottom: 30px;
+    &:last-child {
+      padding-bottom: 0;
+    }
+    .icon {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $grey-background;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 50px;
+      border: 0;
+      .file-input {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    .text {
+      .item-title {
+        text-decoration: underline;
+        font-size: 18px;
+        padding-bottom: 10px;
+        font-weight: 700;
+      }
+      .note {
+        color: $grey;
+      }
+    }
+    .result {
+      color: $green;
+      //justify-content: flex-end;
+    }
+  }
+}

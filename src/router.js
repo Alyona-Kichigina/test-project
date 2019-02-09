@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
@@ -9,14 +8,14 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home,
+      path: '/profile',
+      name: 'profile',
+      component: () => import('./views/Profile/index.vue'),
     },
     {
       path: '/promo',
       name: 'promo',
-      component: () => import(/* webpackChunkName: "about" */ './views/Promo/index.vue'),
+      component: () => import('./views/Promo/index.vue'),
     },
   ],
 })
