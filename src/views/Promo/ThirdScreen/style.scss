@@ -1,20 +1,9 @@
 .third-screen-block {
   padding-top: 1.875rem;
-  color: $white;
   background-image: url('../../../../public/img/background2.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  .header {
-    display: flex;
-    .logo {
-      fill: $white;
-    }
-  }
   .content {
     padding-top: 3.875rem;
     padding-bottom: 3.125rem;
-    text-align: center;
     .title {
       padding-bottom: 5.625rem;
     }
@@ -48,7 +37,7 @@
       @media (max-width: 420px) {
         padding: 1.25rem;
       }
-      .text {
+      .action-text {
         font-size: 1.25rem;
         line-height: 1.4;
         @media (max-width: 559px) {

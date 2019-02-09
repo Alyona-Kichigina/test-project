@@ -1,20 +1,14 @@
 .first-screen-block {
-  color: $white;
   background-image: url('../../../../public/img/background1.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
+  //position: relative;
   .header {
     padding-top: 2.3125rem;
-    display: flex;
     position: relative;
     @media (max-width: 420px) {
       flex-direction: column;
       padding-top: 1.25rem;
     }
     .logo {
-      fill: $white;
       position: absolute;
       @media (max-width: 420px) {
         position: static;
@@ -31,7 +25,6 @@
     }
   }
   .content {
-    text-align: center;
     padding-top: 7.625rem;
     @media (max-width: 420px) {
       padding-top: 4.375rem;

@@ -103,36 +103,40 @@ export default {
   },
   mounted() {
     this.getWigthChildren();
-    // console.log(this.$refs.servicesList, this.$refs.servicesList.clientWidth,this.$refs.servicesList.children[0].clientWidth)
   },
   methods: {
     changePromoText(index) {
       return () => {
+        // получаем номер ряда в котором находится блок
         const row = Math.ceil((index + 1) / this.quantityColumn);
+        // получаем индекс блока после которого выводим текст
         this.indexOfLastRowElement = row * this.quantityColumn;
         const b = (index + 1) % this.quantityColumn;
+        // получаем номер блока в ряду (например: 1, 2, 3, 4; 1, 2, 3, 4)
         this.selectedColumnNumber = b === 0 ? this.quantityColumn : b;
-        console.log(b);
         this.selectedAdvantageIndex = index;
       };
     },
     getWigthChildren() {
+      // делим ширину блока списка на ширину первого ребенка чтобы получить количество блоков в ряду
       this.quantityColumn = Math.round(this.$refs.servicesList.clientWidth / this.$refs.servicesList.children[0].clientWidth);
+      // ширина блока в ряду
       this.childrenWidth = this.$refs.servicesList.children[0].clientWidth;
-      console.log(this.quantityColumn);
     },
   },
   computed: {
     getPromoText() {
+      // выводим текст выбраного блока
       return this.servicesArray[this.selectedAdvantageIndex].text;
     },
     getArrowPosition() {
+      // помещаем стрелку текста по середине под выбраным блоком
       return `${(this.childrenWidth * this.selectedColumnNumber) - (this.childrenWidth / 2)}px`;
     },
   },
   watch: {
     getArrowPosition(newValue) {
-      console.log(newValue)
+      // передаем стиль для стрелки текста
       this.$refs.servicesList.style.setProperty('--selected-item-arrow-left', newValue);
     },
   },
@@ -146,13 +150,13 @@ export default {
           </div>
         </div>,
       );
-      if ((index + 1) === this.indexOfLastRowElement) acc.push(<div class="text-a">{this.getPromoText}</div>);
+      if ((index + 1) === this.indexOfLastRowElement) acc.push(<div class="text">{this.getPromoText}</div>);
       return acc;
     }, []);
     return (
       <div class="second-screen-block">
         <div class="container">
-          <div class="header">
+          <div class="header d-flex">
             <Logo/>
           </div>
           <div class="content">
@@ -171,6 +175,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="./style.scss">
-
-</style>
+<style scoped lang="scss" src="./style.scss"></style>

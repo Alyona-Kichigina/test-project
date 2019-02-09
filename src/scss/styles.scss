@@ -87,6 +87,27 @@ a {
   }
 }
 
+.content {
+  text-align: center;
+}
+
+.background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.color-white {
+  color: $white;
+  .logo {
+    fill: $white;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
 .fade-enter-active, .fade-leave-active{
   transition: opacity .3s;
 }

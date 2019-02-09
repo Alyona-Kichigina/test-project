@@ -1,7 +1,7 @@
 <template>
-	<div class="first-screen-block">
+	<div class="first-screen-block background-image color-white">
 		<div class="container">
-			<div class="header">
+			<div class="header d-flex">
 				<Logo class="white"></Logo>
 				<div class="text">
 				 Только до 31 января

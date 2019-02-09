@@ -1,7 +1,7 @@
 <template>
-	<div class="third-screen-block">
+	<div class="third-screen-block background-image color-white">
 		<div class="container">
-			<div class="header">
+			<div class="header d-flex">
 				<Logo/>
 			</div>
 			<div class="content">
@@ -18,7 +18,7 @@
 				</div>
 				<PrimaryButton>Создать аккаунт</PrimaryButton>
 				<div class="action">
-					<div class="text">
+					<div class="action-text">
 						Вы получите <span>1000 баллов</span> в системе лояльности <a href="">Джино.Плюсы</a>,
 						зарегистрировавшись в течении <span>24 часов</span> после посещения данной страницы
 					</div>
@@ -50,6 +50,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="./style.scss">
-
-</style>
+<style scoped lang="scss" src="./style.scss"></style>
