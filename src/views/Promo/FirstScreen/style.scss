@@ -1,6 +1,6 @@
 .first-screen-block {
   background-image: url('../../../../public/img/background1.jpg');
-  //position: relative;
+  padding-bottom: 3.75rem;
   .header {
     padding-top: 2.3125rem;
     position: relative;
@@ -26,25 +26,19 @@
   }
   .content {
     padding-top: 7.625rem;
-    @media (max-width: 420px) {
+    padding-bottom: 8.625rem;
+    @media (max-width: 859px) {
       padding-top: 4.375rem;
+    }
+    @media (max-width: 650px) {
+      padding-top: 3.125rem;
     }
     h1 {
       padding-bottom: 4.0625rem;
     }
     .form-block {
-      padding-bottom: 2.1875rem;
+      padding-bottom: 5.3125rem;
     }
-    .btn-def {
-
-    }
-  }
-  .button-down {
-    display: flex;
-    justify-content: center;
-    padding-top: 8.625rem;
-    padding-bottom: 3.75rem;
-    cursor: pointer;
   }
 }
 

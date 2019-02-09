@@ -1,15 +1,15 @@
 <template>
-	<div class="buttons">
-		<div class="circle active"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-	</div>
+  <div class="buttons">
+    <div class="circle active" />
+    <div class="circle" />
+    <div class="circle" />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'index'
-};
+  name: 'Index'
+}
 </script>
 
 <style scoped lang="scss">

@@ -1,7 +1,12 @@
 <template>
   <div class="input-container">
     <!--лабел инпутам всего компонента поля формы-->
-    <label class="reportText" :for="id">{{label}}</label>
+    <label
+      class="reportText"
+      :for="id"
+    >
+      {{ label }}
+    </label>
     <div class="input-wrapper">
       <!--здесь будем выводить инпут-->
       <slot />
@@ -9,7 +14,7 @@
         v-if="submitFailed || (!changed && touched)"
         class="error-container"
       >
-         <!--выводим ошибку-->
+        <!--выводим ошибку-->
         {{ validationErrors[0] }}
       </div>
     </div>

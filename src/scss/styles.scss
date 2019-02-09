@@ -28,10 +28,13 @@ h1 {
   margin: 0;
   line-height: 1.3;
   @media (max-width: 858px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
-  @media (max-width: 420px) {
-    font-size: 1.625rem;
+  @media (max-width: 590px) {
+    font-size: 2.25rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 2rem;
   }
 }
 
@@ -53,6 +56,21 @@ a {
   transition: all 0.3s ease-in-out;
   &:hover {
     text-decoration: none;
+  }
+}
+
+input {
+  font-size: 1.375rem;
+  @media (max-width: 650px) {
+    font-size: 1rem;
+  }
+}
+
+::placeholder {
+  color: $color-font;
+  font-size: 1.375rem;
+  @media (max-width: 650px) {
+    font-size: 1rem;
   }
 }
 
@@ -84,6 +102,20 @@ a {
     &:hover {
       background: $color-font;
     }
+  }
+}
+
+.button-down {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 20px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  @media (max-width: 859px) {
+    display: none;
   }
 }
 

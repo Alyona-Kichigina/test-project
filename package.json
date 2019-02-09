@@ -9,6 +9,7 @@
     "start": "npm run serve"
   },
   "dependencies": {
+    "@vue/eslint-config-standard": "^4.0.0",
     "axios": "^0.18.0",
     "validatorjs": "^3.15.1",
     "vue": "^2.5.22",

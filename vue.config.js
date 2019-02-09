@@ -7,6 +7,7 @@ module.exports = {
       }
     }
   },
+
   css: {
     loaderOptions: {
       // pass options to sass-loader
@@ -16,5 +17,7 @@ module.exports = {
         data: '@import "@/scss/variables.scss";'
       }
     }
-  }
+  },
+
+  lintOnSave: undefined
 }

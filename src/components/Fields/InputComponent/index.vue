@@ -1,48 +1,43 @@
 <template>
   <!--компонент который показывает ошибку-->
   <InputWrapper
-    :label="label"
     :id="id"
-    :validationErrors="validationErrors"
-    :submitFailed="submitFailed"
+    :label="label"
+    :validation-errors="validationErrors"
+    :submit-failed="submitFailed"
     :changed="changed"
     :touched="touched"
   >
     <input
-      :class="submitFailed && 'has-error'"
       :id="id"
+      :class="submitFailed && 'has-error'"
       :placeholder="placeholder"
       :value="value"
-      @input="handleInput"
+      v-on="_events"
       @blur="handleBlur"
-    />
+    >
   </InputWrapper>
 </template>
 <script>
 import InputWrapper from '../InputWrapper.vue'
 import InputMixin from '../../../mixins/InputMixin.js'
 export default {
-  name: 'input-doc',
-  mixins: [InputMixin],
-  methods: {
-    handleInput ({ target: { value } }) {
-      this.$emit('input', value)
-    }
+  name: 'InputDoc',
+  components: {
+    InputWrapper
   },
+  mixins: [InputMixin],
   props: {
     value: {
       type: [Number, String],
       default: ''
     }
-  },
-  components: {
-    InputWrapper
   }
 }
 </script>
 <style lang="scss">
   input {
-  
+
   }
   .has-error {
     .el-input__inner{
