@@ -17,6 +17,7 @@
         </div>
         <PrimaryButton>Создать аккаунт</PrimaryButton>
       </div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -34,6 +35,4 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="./style.scss">
-
-</style>
+<style scoped lang="scss" src="./style.scss"></style>

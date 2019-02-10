@@ -1,10 +1,7 @@
 <template>
   <div class="promo">
-    <FirstScreen ref="FirstScreen" />
-    <SecondScreen ref="SecondScreen" />
-    <ThirdScreen ref="ThirdScreen" />
-    <div
-      v-if="renderButtonDown"
+    <FirstScreen ref="FirstScreen" >
+      <div
       class="button-down"
       @click="smoothScrolling(1)"
     >
@@ -13,6 +10,10 @@
         alt=""
       >
     </div>
+    </FirstScreen>
+    <SecondScreen ref="SecondScreen" />
+    <ThirdScreen ref="ThirdScreen" />
+    
     <div class="buttons">
       <!--выводим количество кнопок столько сколько блоков-->
       <div
@@ -21,7 +22,7 @@
         :class="index === navDotActiveIdes && 'active'"
         class="circle"
         @click="smoothScrolling(index)"
-      ></div>
+      />
     </div>
   </div>
 </template>

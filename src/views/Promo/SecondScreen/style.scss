@@ -24,9 +24,9 @@
         flex-direction: column;
         justify-content: center;
         cursor: pointer;
-        padding: 0 15px;
+        padding: 15px;
         @media (max-width: 599px) {
-          padding: 0 5px;
+          padding: 5px;
         }
         .name {
           padding-top: 1.375rem;

@@ -1,54 +1,67 @@
-.profile-block {
-  padding: 50px 0;
-  .title {
-    text-align: left;
-    font-size: 20px;
-    padding-bottom: 30px;
-  }
-  p {
-    color: $grey;
-    padding-bottom: 30px;
-  }
-  .file-upload-block {
-    cursor: pointer;
-    display: flex;
-    padding-bottom: 30px;
-    &:last-child {
-      padding-bottom: 0;
+.profile {
+  background: $grey-background;
+  .profile-block {
+    padding: 50px 0;
+    .title {
+      text-align: left;
+      font-size: 20px;
+      padding-bottom: 30px;
     }
-    .icon {
-      position: relative;
+    p {
+      color: $grey;
+      padding-bottom: 30px;
+    }
+    .file-upload-block {
+      cursor: pointer;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $grey-background;
-      border-radius: 5px;
-      padding: 5px 10px;
-      margin-right: 50px;
-      border: 0;
-      .file-input {
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+      padding-bottom: 30px;
+      justify-content: space-between;
+      &:last-child {
+        padding-bottom: 0;
       }
-    }
-    .text {
-      .item-title {
-        text-decoration: underline;
-        font-size: 18px;
-        padding-bottom: 10px;
-        font-weight: 700;
+      .wrapper {
+        display: flex;
+        .icon {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $white;
+          border-radius: 5px;
+          padding: 5px 10px;
+          margin-right: 50px;
+          border: 0;
+          .file-input {
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+          }
+        }
+        .text {
+          .item-title {
+            font-size: 18px;
+            padding-bottom: 7px;
+            font-weight: 700;
+            display: block;
+            &.underline {
+              text-decoration: underline;
+            }
+          }
+          .grey-text {
+            color: $grey;
+          }
+        }
       }
-      .note {
-        color: $grey;
+      .result {
+        color: $green;
       }
-    }
-    .result {
-      color: $green;
-      //justify-content: flex-end;
+      .no-result {
+        color: $red;
+      }
     }
   }
 }
+

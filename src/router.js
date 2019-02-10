@@ -13,7 +13,7 @@ export default new Router({
       component: () => import('./views/Profile/index.vue'),
     },
     {
-      path: '/promo',
+      path: '/',
       name: 'promo',
       component: () => import('./views/Promo/index.vue'),
     },
