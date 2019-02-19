@@ -45,24 +45,26 @@ export default {
   data () {
     return {
       scrollState: [],
-      navDotActiveIdes: 0,
-      renderButtonDown: true
+      navDotActiveIdes: 0
     }
   },
+  // при первичной отрисовке
   beforeMount () {
-    // добавляем обработчик события scroll и вызываем функцию
+    // создает обработчик события scroll и вызываем функцию
     document.addEventListener('scroll', this.handleScroll)
   },
   mounted () {
     // объект делаем массивом и создем новый массив с высотой каждого элемента
     this.scrollState = Object.values(this.$refs).map(({ $el: { clientHeight } }) => clientHeight)
   },
+  // перед тем как компонент исчезнет
+  // чтобы не было ошибки при вызове события если нет компонента
   beforeDestroy () {
+    // удаляем обработчик и вызываем функцию
     document.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll ({ pageY }) {
-      this.renderButtonDown = pageY < 250
       try {
         this.scrollState.reduce((acc, itemHeight, index) => {
           if ((acc + itemHeight) >= pageY) throw Error(index)
@@ -79,10 +81,13 @@ export default {
     smoothScrolling (index) {
       const targetYPosition = this.scrollState.reduce((acc, itemHeight, i) => {
         // eslint-disable-next-line no-param-reassign
+        // если полученный индекс -1 больше либо равен индексу,
+        // то аккумулятору прибавляем высоту полученного блока
         if (index - 1 >= i) acc += itemHeight
         return acc
       }, 0)
       const { pageYOffset } = window
+      // если targetYPosition больше pageYOffset, то опускаем вниз, иначе вверх
       const direction = targetYPosition > pageYOffset ? DOWN : UP
 
       this.interval = setInterval(() => {
