@@ -13,7 +13,7 @@
           за домен&nbsp;.RU&nbsp;—&nbsp;39₽
         </h1>
         <div class="form-block">
-          <Login />
+          <DomainCheck />
         </div>
         <PrimaryButton>Создать аккаунт</PrimaryButton>
       </div>
@@ -23,14 +23,14 @@
 </template>
 
 <script>
-import Login from '@/Layout/DomainCheck/index'
+import DomainCheck from '@/Layout/DomainCheck/index'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
 import Logo from '@/components/Logo/index'
 
 export default {
   name: 'Index',
   components: {
-    Login, PrimaryButton, Logo
+    DomainCheck, PrimaryButton, Logo
   }
 }
 </script>
